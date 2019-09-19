@@ -1,34 +1,94 @@
-
 .normal {
-  font-family: Georgia, sans-serif;
-  margin-top: 3em;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  color: #fff;
+  background: rgb(63, 81, 181);
+  height: 100px;
+  line-height: 100px;
   text-align: center;
-  font-size: 30px;
-  color: red;
 }
-
+.main {
+  flex: 1;
+  display: flex;
+}
+.content {
+  margin: auto;
+  width: 350px;
+  line-height: 50px;
+  padding-bottom: 100px;
+  font-size: 18px;
+}
 .title {
-  font-size: 2.5rem;
-  font-weight: normal;
-  letter-spacing: -1px;
+  text-align: center;
+}
+.switchTab {
+  width: 100%;
+  line-height: 35px;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-bottom: 15px;
+  display: flex;
+  text-align: center;
+}
+.switchTab li {
+  width: 50%;
+  cursor: pointer;
+  border-bottom: 2px solid #ccc;
+}
+.switchActive {
+  border-bottom: 2px solid rgb(63, 81, 181) !important;
+}
+.input {
+  height: 45px;
+  width: 100%;
+  font-size: 18px;
+  padding-left: 20px;
+  border-radius: 5px;
+  outline: none;
+}
+.input::placeholder {
+  font-size: 18px;
+}
+.autoLoginBox {
+  height: 45px;
+}
+.autoLogin {
+  height: 18px;
+  width: 18px;
+  margin-right: 10px;
 }
 
-.welcome {
-  height: 328px;
-  background: url(../../assets/yay.jpg) no-repeat center 0;
-  background-size: 388px 328px;
+/* 点击效果 */
+.loginBtn {
+  margin-top: 5px;
+  display: inline-block;
+  height: 45px;
+  width: 100%;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 3px #999;
+}
+.loginBtn:disabled {
+  opacity: 0.8;
+}
+.loginBtn:hover {
+  background-color: #3e8e41;
 }
 
-.list {
-  font-size: 1.2em;
-  margin-top: 1.8em;
-  list-style: none;
-  line-height: 1.5em;
-}
-
-.list code {
-  background: #f7f7f7;
-}
-.main{
-  height: 200px;
+.loginBtn:active {
+  background-color: #3e8e41;
+  box-shadow: 0 1px #666;
+  transform: translateY(2px);
 }
