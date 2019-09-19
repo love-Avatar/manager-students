@@ -31,12 +31,15 @@ export default {
 
     *login({ payload }, { call, put }) {  // eslint-disable-line
       const result = yield call(login, payload)
-      yield put({ type: 'savelogin', action: result.data });
+      // yield put({ type: 'savelogin', action: result.data });
+      return result
     },
 
     *register({ payload }, { call, put }) {  // eslint-disable-line
       const result = yield call(register, payload)
-      yield put({ type: 'saveRegister', action: result.data });
+      return result
+
+      // yield put({ type: 'saveRegister', action: result.data });
     },
   },
 

@@ -14,7 +14,7 @@ function RouterConfig({ history }) {
         <Route path="/managerView" history={history} exact component={ManagerView} />
         <Route path="/studentsDetails" history={history} exact component={StudentDetails} />
         <Route path="/teacherView" history={history} exact component={TeacherView} />
-        <Redirect from='/' to='/loginRegister' />>
+        <Redirect from='/' to='/managerView' />>
       </Switch>
     </Router>
   );
