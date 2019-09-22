@@ -79,7 +79,7 @@ const IndexPage = props => {
             {
               studentsList.map((item, index) => {
                 return (
-                  <div className={styles.studentsDetail}>
+                  <div key={index} className={styles.studentsDetail}>
                     <div id="echatsView" className={styles.echatsView}></div>
 
                     <div className={styles.echarts_footer}>
