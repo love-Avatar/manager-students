@@ -1,31 +1,219 @@
+/* 尽量不要用驼峰大小写 */
+.juzhong {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .normal {
-  font-family: Georgia, sans-serif;
-  margin-top: 3em;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  height: 100px;
+  line-height: 100px;
+  background-color: rgba(0, 118, 255, 1);
+  color: rgba(255, 255, 255, 1);
+  font-size: 28px;
   text-align: center;
+  font-family: Roboto;
+  border: 1px solid rgba(187, 187, 187, 1);
+}
+.mainbody {
+  display: flex;
+  flex-direction: column;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.checkclass {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 126px;
+  line-height: 20px;
+  text-align: center;
+  border: 1px solid rgba(187, 187, 187, 1);
 }
 
-.title {
-  font-size: 2.5rem;
-  font-weight: normal;
-  letter-spacing: -1px;
+.checkclass button {
+  width: 100px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.addClass {
+  width: 103px;
+  height: 50px;
+  color: rgba(16, 16, 16, 1);
+  font-size: 14px;
+  font-family: Microsoft Yahei;
+  background-color: #fff;
+  border: 1px solid rgba(187, 187, 187, 1);
+}
+/* switch切换按钮 */
+.switchMode {
+  display: flex;
+}
+.line_chart {
+  width: 80px;
+  height: 30px;
+  display: flex;
+}
+.line_chart div {
+  margin: auto;
+  position: relative;
+  width: 50px;
+  height: 20px;
+  border-radius: 10px;
+  background: rgba(110, 221, 193, 0.5);
+  transition: all 0.5s;
+}
+.line_chart div p {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgb(110, 221, 193);
+  position: absolute;
+  top: -5px;
+}
+/* 添加学生 */
+.addStudent,
+.addStudent li {
+  line-height: 50px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.addStudent {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.addStudent input {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.addStudent li button {
+  margin-left: 30px;
+  width: 95px;
+  height: 40px;
+  line-height: 20px;
+  border-radius: 4px;
+  background-color: rgba(230, 241, 252, 1);
+  border: 1px solid rgba(163, 208, 253, 1);
 }
 
-.welcome {
-  height: 328px;
-  background: url(../../assets/yay.jpg) no-repeat center 0;
-  background-size: 388px 328px;
+.echatsView {
+  height: 300px;
+  width: 100%;
+  // border: 1px solid #000;
+}
+/*选中 的 按钮*/
+.isActive {
+  background-color: rgba(24, 144, 255, 1);
+  color: #fff;
+}
+.echatsFooter {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 30px;
+  background-color: rgba(242, 241, 241, 1);
+}
+.echatsFooter button {
+  height: 35px;
+  line-height: 25px;
+  font-size: 14px;
+  font-family: Microsoft Yahei;
+  color: rgba(16, 16, 16, 1);
+  background-color: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(187, 187, 187, 1);
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.echatsFooter li {
+  flex: 1;
 }
 
-.list {
-  font-size: 1.2em;
-  margin-top: 1.8em;
-  list-style: none;
-  line-height: 1.5em;
+.dialog {
+  position: fixed;
+  background: #fff;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+}
+.dialo_gcon {
+  margin: auto;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 15px;
+  padding: 20px 30px;
+}
+.dialog_header {
+  margin-left: -20px;
+  margin-bottom: 20px;
+}
+.dialog_main {
+  padding: 5px;
+}
+.dialog_main p {
+  display: flex;
+  padding: 3px 5px;
 }
 
-.list code {
-  background: #f7f7f7;
+.dialog_main li {
+  display: flex;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
-.main {
-  height: 200px;
+
+.dialog_main input,
+.dialog_main input {
+  height: 30px;
+  line-height: 30px;
+  width: 300px;
+}
+.dialog_main textarea {
+  width: 300px;
+  height: 65px;
+}
+
+.dialo_gcon button {
+  width: 65px;
+  height: 36px;
+  line-height: 20px;
+  border-radius: 4px;
+  background-color: rgba(24, 144, 255, 1);
+}
+.dialog_main li span {
+  display: flex;
+  width: 60px;
+}
+.dialog_main li span span {
+  margin: auto;
+}
+
+.dialog_footer {
+  display: flex;
+  margin-top: 20px;
+}
+.dialog_footer p {
+  flex: 1;
+}
+.dialog_footer button {
+  margin-left: 10px;
+  outline: none;
+  padding: 3px 10px;
+  border-radius: 5px;
+}
+.cancel {
+  width: 65px;
+  height: 36px;
+  line-height: 20px;
+  color: #000;
+  background-color: rgba(255, 255, 255, 1) !important;
+  border: 1px solid rgba(217, 217, 217, 1);
+}
+.dialog_footer button.sure {
+  background: blue;
+  color: #fff;
 }

@@ -1,46 +1,276 @@
-.normal {
-  width: 100%;
-  height: 100%;
+/* 尽量不要用驼峰大小写 */
+.juzhong {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.header {
-  height: 70px;
-  background: blue;
-  text-align: center;
-  color: #fff;
+@media screen and(min-width:550px) {
+  .normal {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    .header {
+      height: 100px;
+      line-height: 100px;
+      background-color: rgba(0, 118, 255, 1);
+      color: rgba(255, 255, 255, 1);
+      font-size: 28px;
+      text-align: center;
+      font-family: Roboto;
+      border: 1px solid rgba(187, 187, 187, 1);
+    }
+  }
+
+  .mainbody {
+    display: flex;
+    flex-direction: column;
+    padding-left: 50px;
+    padding-right: 50px;
+    .checkclass {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      height: 126px;
+      line-height: 20px;
+      text-align: center;
+      border: 1px solid rgba(187, 187, 187, 1);
+      button {
+        width: 100px;
+        margin-left: 15px;
+        margin-right: 15px;
+      }
+    }
+  }
+
+  /* switch切换按钮 */
+  .switchMode {
+    display: flex;
+  }
+  .line_chart {
+    width: 80px;
+    height: 30px;
+    display: flex;
+    div {
+      margin: auto;
+      position: relative;
+      width: 50px;
+      height: 20px;
+      border-radius: 10px;
+      background: rgba(110, 221, 193, 0.5);
+      transition: all 0.5s;
+      p {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: rgb(110, 221, 193);
+        position: absolute;
+        top: -5px;
+      }
+    }
+  }
+
+  .echatsView {
+    height: 300px;
+    width: 100%;
+    // border: 1px solid #000;
+  }
+  /*选中 的 按钮*/
+  .isActive {
+    background-color: rgba(24, 144, 255, 1);
+    color: #fff;
+  }
+  .echatsFooter {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 30px;
+    background-color: rgba(242, 241, 241, 1);
+    button {
+      height: 35px;
+      line-height: 25px;
+      font-size: 14px;
+      font-family: Microsoft Yahei;
+      color: rgba(16, 16, 16, 1);
+      background-color: rgba(255, 255, 255, 1);
+      border: 1px solid rgba(187, 187, 187, 1);
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+    li {
+      flex: 1;
+    }
+  }
+
+  .echarts_footer {
+    border: 1px solid #000;
+    display: flex;
+    .left {
+      width: 180px;
+      font-size: 14px;
+      text-align: center;
+      font-family: SourceHanSansSC-regular;
+      p {
+        color: rgba(63, 81, 181, 1);
+      }
+      li {
+        color: #000;
+      }
+    }
+    .right {
+      flex: 1;
+      line-height: 26px;
+      height: 78px;
+      background-color: rgba(0, 150, 136, 1);
+      color: rgba(255, 255, 255, 1);
+      font-size: 18px;
+      text-align: left;
+      font-family: Roboto;
+      border: 1px solid rgba(187, 187, 187, 1);
+      /* 多行省略号 */
+      // display:box;
+      // box-orient: vertical;
+      // line-clamp: 3;
+      // overflow: hidden;
+    }
+  }
+
+  .echarts_footer_list {
+    border: 1px solid #000;
+    padding-left: 30px;
+    padding-right: 30px;
+    div {
+      margin: 10px 25px;
+    }
+  }
 }
 
-.checkclass {
-  height: 100px;
-  border: 1px solid #000;
-}
+@media screen and (max-width: 549px) {
+  .normal {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    .header {
+      height: 80px;
+      line-height: 80px;
+      background-color: rgba(0, 118, 255, 1);
+      color: rgba(255, 255, 255, 1);
+      font-size: 20px;
+      text-align: center;
+      font-family: Roboto;
+      border: 1px solid rgba(187, 187, 187, 1);
+    }
+  }
 
-.addStudent {
-  height: 50px;
-  border: 1px solid #000;
-}
-/* 主体 */
-.main {
-  flex: 1;
-  // display: flex;
-  overflow-y: auto;
-}
-.content {
-  height: 1000px;
-  background: lightblue;
-  border: 1px solid #000;
-}
-.studentsDetail {
-  height: 300px;
-  border: 1px solid #000;
-}
-.echatsView {
-  height: 150px;
-  border: 1px solid #000;
-}
-.echatsFooter {
-  height: 50px;
-  border: 1px solid #000;
-  display: flex;
+  .mainbody {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    padding-right: 10px;
+    .checkclass {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      height: 126px;
+      line-height: 20px;
+      text-align: center;
+      border: 1px solid rgba(187, 187, 187, 1);
+      button {
+        width: 100px;
+        height: 30px;
+        line-height: 30px !important;
+        margin-left: 15px;
+        margin-right: 15px;
+      }
+    }
+  }
+
+  /* switch切换按钮 */
+  .switchMode {
+    display: flex;
+    .line_chart {
+      width: 80px;
+      height: 30px;
+      display: flex;
+      div {
+        margin: auto;
+        position: relative;
+        width: 50px;
+        height: 20px;
+        border-radius: 10px;
+        background: rgba(110, 221, 193, 0.5);
+        transition: all 0.5s;
+        p {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          background: rgb(110, 221, 193);
+          position: absolute;
+          top: -5px;
+        }
+      }
+    }
+  }
+
+  .echatsView {
+    height: 300px;
+    width: 100%;
+    // border: 1px solid #000;
+  }
+  /*选中 的 按钮*/
+  .isActive {
+    background-color: rgba(24, 144, 255, 1);
+    color: #fff;
+  }
+  .echatsFooter {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 30px;
+    background-color: rgba(242, 241, 241, 1);
+    li {
+      flex: 1;
+    }
+  }
+
+  .echarts_footer {
+    border: 1px solid #000;
+    display: flex;
+    .left {
+      width: 120px;
+      font-size: 14px;
+      text-align: center;
+      font-family: SourceHanSansSC-regular;
+      p {
+        color: rgba(63, 81, 181, 1);
+      }
+      li {
+        color: #000;
+      }
+    }
+    .right {
+      flex: 1;
+      line-height: 26px;
+      height: 78px;
+      background-color: rgba(0, 150, 136, 1);
+      color: rgba(255, 255, 255, 1);
+      font-size: 18px;
+      text-align: left;
+      font-family: Roboto;
+      border: 1px solid rgba(187, 187, 187, 1);
+      /* 多行省略号 */
+      // display:box;
+      // box-orient: vertical;
+      // line-clamp: 3;
+      // overflow: hidden;
+    }
+  }
+
+  .echarts_footer_list {
+    border: 1px solid #000;
+    padding-left: 10px;
+    padding-right: 10px;
+    div {
+      margin: 10px 5px;
+    }
+  }
 }

@@ -9,7 +9,7 @@ export async function login(opt) {
 export async function register(opt) {
   console.log(opt)
   const result = await request('/api/emstu/teacher/register', opt);
-  console.log(result)
+  // console.log(result)
   return result
 }
 

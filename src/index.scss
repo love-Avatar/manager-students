@@ -9,3 +9,49 @@ body,
 :global(#root) {
   height: 100%;
 }
+
+button {
+  border-radius: 4px;
+  padding: 3px 8px;
+  background: #e6f1fc;
+  color: #a3d0fd;
+  background-color: rgba(230, 241, 252, 1);
+  border: 1px solid rgba(163, 208, 253, 1);
+  min-width: 60px;
+  max-height: 50px;
+  line-height: 40px;
+  text-align: center;
+}
+
+input {
+  width: 240px;
+  height: 40px;
+  line-height: 20px;
+  border-radius: 4px 4px 4px 4px;
+  background-color: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(220, 223, 230, 1);
+  padding-left: 15px;
+}
+input::placeholder {
+  color: #ccc;
+}
+.juzhong {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 
+样式需要整体重构
+
+一致的基础样式风格  加到标签上  input:type=text
+  
+  button 按钮统一加上 宽高 和 圆角  padding 以及 margin 
+  input 统一 加上圆角 placeholder 属性  高度  以及行高  margin 以及 padding 设置 
+
+  border 的 1px 设置
+
+
+  单独的样式通过类名去设置
+
+*/

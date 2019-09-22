@@ -6,7 +6,7 @@ import styles from './index.scss';
 
 let noRepeatCommit = null  //定时器  防抖
 const Login_Register = (props) => {
-  const { dispatch, loginMsg, registerMsg } = props
+  const { dispatch, loginMsg, registerMsg, history } = props
   console.log(loginMsg, registerMsg, 'loginMsg', 'registerMsg')
   //  两周之内自动登录    两周之外自动输入用户名和密码 
   //  登录 与 注册   成功或者失败需要进行提示 
@@ -82,34 +82,25 @@ const Login_Register = (props) => {
             //  传递的是标准的json字符串，后端可以正常解构出来
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify({ username: pass_word, password: password }), // 需要传递的信息
+          body: JSON.stringify({ username: username, password: password }), // 需要传递的信息
         }
       })).data;
-      console.log(res)
+      // console.log(res)
       if (res.code === 1) {
         alert(res.msg)
         localStorage.setItem('userInfo', JSON.stringify({
           user_name: username, pass_word: password
         }))
+        history.push('/studentsDetails')
       } else if (res.code === 0) {
         // 登录失败     进行提示    并清空文本框
         alert(res.msg)
+      } else {
+        alert(res.msg)
       }
-
-      // 触发时机不对  数据走仓库会引发更多的问题
-      //  登录成功    保存对应的用户信息    跳转到对应权限的页面
-      // if (loginMsg.code === 1) {
-      //   alert(loginMsg.msg)
-      //   localStorage.setItem('userInfo', JSON.stringify({
-      //     user_name: username, pass_word: password
-      //   }))
-      // } else if (loginMsg.code === 0) {
-      //   // 登录失败     进行提示    并清空文本框
-      //   alert(loginMsg.msg)
-      // }
     } else {
-      console.log('is register')
-      dispatch({
+      // console.log('is register')
+      const res = (await dispatch({
         type: 'login/register',
         payload: {
           method: 'POST',
@@ -118,22 +109,25 @@ const Login_Register = (props) => {
             //  传递的是标准的json字符串，后端可以正常解构出来
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify({ username: 'baiyupeng', password: '123456' }), // 需要传递的信息
+          body: JSON.stringify({ username: username, password: password }), // 需要传递的信息
         }
-      });
+      })).data;
+      console.log(res)
       //  注册成功    保存对应的用户信息  进行提示   并且切换到 login 状态
 
-      if (registerMsg.code === 1) {
-        alert(registerMsg.msg)
+      if (res.code === 1) {
+        alert(res.msg)
         localStorage.setItem('userInfo', JSON.stringify({
           user_name: username, pass_word: password
         }))
 
         // setActive('login')
-      } else if (registerMsg.code === 0) {
+      } else if (res.code === 0) {
         //  注册失败     进行提示    并清空文本框  重新输入       
-        alert(registerMsg.msg)
+        alert(res.msg)
 
+      } else {
+        alert(res.msg)
       }
     }
   }
